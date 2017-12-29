@@ -1,0 +1,10 @@
+1.SQLiteStudio sqlite3
+
+怎么使用SQLiteStudio来管理Sqlite数据库
+https://jingyan.baidu.com/article/f96699bbd6feb5894e3c1ba9.html
+
+
+2.Postman 进行rest请求测试
+
+如何在Chrome下使用Postman进行rest请求测试
+https://jingyan.baidu.com/article/90808022ff18defd91c80f9a.html

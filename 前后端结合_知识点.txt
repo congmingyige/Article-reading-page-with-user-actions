@@ -1,0 +1,14 @@
+
+Vue2.0 + Element-UI + WebAPI
+http://www.cnblogs.com/guokun/p/6068652.html 
+
+
+数据传过来是JSON格式的字符串，用JavaScript解析就可以变成对象，就可以用了
+
+
+
+postman REST Client的浏览器插件，可以自己构造各种各样的Http请求然后分析结果，尤其是POST请求，这样就可以比较方便地测试我们自己写的API
+
+
+
+

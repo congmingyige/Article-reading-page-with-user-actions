@@ -1,0 +1,13 @@
+Django-数据库多对多关系
+http://blog.csdn.net/y472360651/article/details/74315504
+
+a.comments.add(XXX)  就可以增加文章a关联的评论
+
+a.comments.all()  就能得到文章a关联的所有评论
+这样就实现了我们期待的不经过查询筛选，直接获得文章对应的评论了
+
+
+
+当删除的是父表的object时，与它有关的子表objects都会删除
+
+

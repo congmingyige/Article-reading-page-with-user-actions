@@ -1,0 +1,22 @@
+events=Event.objects.filter(e_date__year=datetime.today().year).filter(e_date__month=datetime.today().month,e_status=1).only('e_name','e_date')
+
+Serializer waits for normal queryset, not ValuesQuerySet (which is returned by values). If you want to query only certain fileds, use only.
+
+但是django无法使用only
+
+
+
+values返回是字典列表;
+values_list返回的是元组列表，
+
+values_list加上
+flat=True
+之后返回值列表
+
+
+
+
+'dict' object has no attribute '_meta'
+'tuple' object has no attribute '_meta'
+
+要转成dict

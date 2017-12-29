@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- 引入样式 -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-default/index.css">
+</head>
+<body>
+  <div id="app">
+    <el-row>
+        <el-menu :default-active="activeIndex2" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+          <el-row>
+            <el-col :span="1">
+                <img src="./logo.png" class="nav-logo">
+            </el-col>
+            <el-col :span="1">
+                <el-menu-item index="1">发现</el-menu-item>
+            </el-col>
+            <el-col :span="1">
+                <el-menu-item index="1">关注</el-menu-item>
+            </el-col>
+            <el-col :span="1">
+                <el-menu-item index="1">消息</el-menu-item>
+            </el-col>
+            <el-col :span="10" :offset="6">
+                <el-menu-item index="1">
+                    <el-input
+                      placeholder="请输入想查找的内容"
+                      icon="search"
+                      v-model="input2"
+                      :on-icon-click="handleIconClick">
+                    </el-input>
+                    <el-button type="primary">搜索</el-button>
+                </el-menu-item>
+            </el-col>
+            <el-col :span="1">
+                <img src="./logo.png" class="nav-usr">
+            </el-col>
+            <el-col :span="2" :offset="2">
+                <el-submenu index="2">
+                    <template slot="title">个人中心</template>
+                    <el-menu-item index="2-1">我的主页</el-menu-item>
+                    <el-menu-item index="2-2">设置</el-menu-item>
+                    <el-menu-item index="2-3">退出</el-menu-item>
+                </el-submenu>
+            </el-col>
+        </el-menu>
+    </el-row>
+
+     <el-row style="margin:5px,0;">
+      <el-col :span="24">
+        <el-card class="box-card" >
+            <div class="text item">
+              <el-row>
+                <el-col :span="4">
+                  <img src="./logo.png" style="height:190px;">
+                </el-col>
+                <el-col :span="20">
+                  <el-row>
+                    <el-col :span="4">
+                      <h1>三关刀</h1>
+                    </el-col>
+                    <el-col :span="20">
+                      <h1>计算机一班学生</h1>
+                    </el-col>
+                  </el-row>
+                  <el-row>
+                    <el-col :span="4">
+                      <h2>居住地</h2>
+                    </el-col>
+                    <el-col :span="20">
+                      <h2>兰州</h2>
+                    </el-col>
+                  </el-row>
+                  <el-row>
+                    <el-col :span="4">
+                      <h2>所在行业</h2>
+                    </el-col>
+                    <el-col :span="20">
+                      <h2>互联网</h2>
+                    </el-col>
+                  </el-row>
+                </el-col>
+              </el-row>
+            </div> 
+        </el-card>
+      </el-col>
+    </el-row>
+
+    <el-row>
+      <el-col :span="16">
+          <template>
+             <el-tabs v-model="activeName" @tab-click="handleClick">
+               <el-tab-pane label="动态" name="first">动态</el-tab-pane>
+               <el-tab-pane label="文章" name="second">文章</el-tab-pane>
+               <el-tab-pane label="讨论" name="third">讨论</el-tab-pane>
+               <el-tab-pane label="收藏" name="forth">收藏</el-tab-pane>
+             </el-tabs>
+         </template>
+      </el-col>
+    </el-row>
+
+
+    <el-row>
+      <el-col :span="16">
+        <el-card class="box-card" >
+            <div slot="header" class="clearfix">
+              <h3 style="line-height:4px;">我的动态</h2>
+            </div>
+            <div class="text item">
+              <p>动态是其他模块的综合体，按照时间排序</p>
+            </div> 
+        </el-card>
+      </el-col>
+    </el-row>
+
+    <el-row>
+      <el-col :span="16">
+        <el-card class="box-card" >
+            <div slot="header" class="clearfix">
+              <h3 style="line-height:4px;">我的文章</h2>
+            </div>
+            <div class="text item">
+              <el-row>
+                <el-col>
+                  <h4>发表了文章</h4>
+                  <h3>你在这里不要动，我去给你买几个橘子</h3>
+                </el-col>
+              </el-row>
+              <el-row>
+                <el-col>
+                  <p>内容内容内容内容内容内容内容内容内容内容内容内容
+                    内容内容内容内容内容内容内容内容内容内容内容内容内
+                    内容内容内容内容内容内容内容内容内容内容内容内容内
+                    容容内容内容内容内容内容内容内容内容
+                  </p>
+                </el-col>
+              </el-row>
+            </div> 
+        </el-card>
+      </el-col>
+    </el-row>
+
+    <el-row>
+      <el-col :span="16">
+        <el-card class="box-card" >
+            <div slot="header" class="clearfix">
+              <h3 style="line-height:4px;">我的讨论</h2>
+            </div>
+            <div class="text item">
+              <el-row type="flex" class="row-bg">
+                  <el-col :span="4">
+                      <img src="./logo.png" style="height:60px;">
+                  </el-col>
+                  <el-col :span="20">
+                      <el-row>
+                        <el-col :span="2">
+                          <h3>姓名</h3>
+                        </el-col>
+                      </el-row>
+                      <el-row>
+                        <el-col :span="24">
+                          <p>交互设计学习中</p>
+                        </el-col>
+                      </el-row>
+                  </el-col>
+              </el-row>
+              <el-row type="flex" class="row-bg">
+                  <el-col :span="24">
+                    <p>
+                      说实话，这篇文章应该感谢简书上的好友。 不信你看一下对话你就明白了。 
+                      郑少是个很认真的人，遇到好友的问题就会去思考。 于是这篇文章今天琢磨了一天，希望能够帮助到你。
+                    </p>
+                  </el-col>
+              </el-row>
+            </div> 
+        </el-card>
+      </el-col>
+    </el-row>
+
+    <el-row>
+      <el-col :span="16">
+        <el-card class="box-card" >
+            <div slot="header" class="clearfix">
+              <h3 style="line-height:4px;">我的收藏</h2>
+            </div>
+            <div class="text item">
+              <el-row>
+                <el-col>
+                  <h4>文章的标题</h4>
+                </el-col>
+              </el-row>
+              <el-row>
+                <el-col>
+                  <p>共 xx人评论 xx人收藏
+                  </p>
+                </el-col>
+              </el-row>
+            </div> 
+        </el-card>
+      </el-col>
+    </el-row>
+
+
+
+
+  </div>
+</body>
+
+
+
+
+<!-- 先引入 Vue -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
+<!--for <div id="app"> -->
+<script>
+    new Vue({
+      el: '#app',
+      data: function() {
+        return { visible: false }
+      }
+    })
+</script>
+
+<!--for <el-tab> -->
+<script>
+  export default {
+    data() {
+      return {
+        activeName: 'first'
+      };
+    },
+    methods: {
+      handleClick(tab, event) {
+        console.log(tab, event);
+      }
+    }
+  };
+</script>
+
+<!--for <time> -->
+<script>
+export default {
+  data() {
+    return {
+      currentDate: new Date()
+    };
+  }
+}
+</script>
+
+<!--for <el-input> 搜索框 -->
+<script>
+export default {
+  data() {
+    return {
+      input2: ''
+    }
+  },
+  methods: {
+    handleIconClick(ev) {
+      console.log(ev);
+    }
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <style>
+  .text {
+    font-size: 14px;
+  }
+
+  .item {
+    padding: 18px 0;
+  }
+
+  .clearfix:before,
+  .clearfix:after {
+      display: table;
+      content: "";
+  }
+  .clearfix:after {
+      clear: both
+  }
+
+  .box-card {
+    width: 100%;
+  }
+
+
+
+
+
+
+
+
+  .user-pic{
+    display: inline;
+    height:40px;
+    width:40px;
+  }
+  .nav-logo{
+    width:60px;
+  }
+  .time {
+    font-size: 13px;
+    color: #999;
+  }
+  .cross-line{
+    color: #999;
+  }
+  .nav-usr{
+    position: absolute;
+    margin: auto,0;
+    height: 50%;
+    overflow: auto;
+  }
+</style>
+</html>

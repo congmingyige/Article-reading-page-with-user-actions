@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8>
+  <title>proj2</title>
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-default/index.css">
+</head>
+<body>
+  <div id="app">
+    <div class ="tag1">
+      <el-row>
+        <el-menu :default-active="activeIndex2" class="el-menu-demo" mode="horizontal">
+          <el-row>
+            <el-col :span="1">
+              <img src="./static/assets/logo.png" style="height:50px"></img>
+            </el-col>
+            <el-col :span="1">
+              <el-menu-item index="1">发现</el-menu-item>
+            </el-col>
+            <el-col :span="1">
+              <el-menu-item index="1">关注</el-menu-item>
+            </el-col>
+            <el-col :span="1">
+              <el-menu-item index="1">消息</el-menu-item>
+            </el-col>
+            <el-col :span="4" :offset="2">
+              <el-menu-item index="1">
+                <el-input
+                  placeholder="请输入想查找的内容"
+                  icon="search"
+                  v-model="input2">
+                </el-input>
+                <el-button type="primary">搜索</el-button>
+              </el-menu-item>
+            </el-col>
+            <el-col :span="1":offset="1">
+              <img src="./static/assets/logo.png" class="nav-usr" style="height:30px"></img>
+            </el-col>
+            <el-col :span="2" :offset="2">
+              <el-submenu index="2">
+                <template slot="title">个人中心</template>
+                <el-menu-item index="2-1">我的主页</el-menu-item>
+                <el-menu-item index="2-2">设置</el-menu-item>
+                <el-menu-item index="2-3">退出</el-menu-item>
+              </el-submenu>
+            </el-col>
+          </el-row>
+        </el-menu>
+      </el-row>
+    </div>
+    <div class ="block0">
+      <el-row>
+        <el-col :span="5">
+          <el-menu mode="vertical" default-active="1" class="el-menu-vertical-demo">
+            <el-menu-item-group title="我的关注" >
+              <div class="添加关注" style="display:inline">
+                <el-button @clicking="startHacking" type="text" class="添加关注">添加关注</el-button>
+              </div>
+              <el-menu-item index="1">
+                <i class="el-icon-document"></i>简友圈
+              </el-menu-item>
+              <el-menu-item index="2">
+                <i class="el-icon-star-on"></i>程序员
+              </el-menu-item>
+              <el-menu-item index="3">
+                <i class="el-icon-date"></i>前端基础类学习
+              </el-menu-item>
+              <el-menu-item index="4">
+                <i class="el-icon-message"></i>拯救地球一号
+              </el-menu-item>
+            </el-menu-item-group>
+          </el-menu>
+        </el-col>
+        <el-col :span="19">
+          <div class ="block2">
+            <el-tabs v-model="activeName2" type="border-card" >
+              <el-tab-pane label="全部评论" name="first">
+                <div>
+                  <div class="card1">
+                    <el-card class="card1">
+                      <div class ="person1">
+                        <el-row :span ="1">
+                          <el-cow :span="4">
+                            来自话题:xxxxx
+                          </el-cow>
+                        </el-row>
+                        <el-row :span="4">
+                          <el-col :span="1">
+                            <img src="./static/assets/logo.png" style="height:40px"></img>
+                          </el-col>
+                          <el-col :span="2">
+                            <h4>杨万里</h4>
+                          </el-col>
+                        </el-row>
+                        <el-row>
+                          <el-col :span="6">
+                            <p>我觉得这一球维金斯投的太漂亮了</p>
+                          </el-col>
+                        </el-row>
+                        <el-row>
+                          <el-col :span="1">
+                            <el-button  type="text" icon="edit">
+                            </el-button>
+                          </el-col>
+                          <el-col :span ="2" >
+                          </el-col>
+                          <el-col :span="1">
+                            <el-button type="text" icon="share"></el-button>
+                          </el-col>
+                          <el-col :span="2">
+                          </el-col>
+                          <el-col :span="1">
+                            <el-button type="text" icon="star-off"></el-button>
+                          </el-col>
+                        </el-row>
+                      </div>
+                    </el-card>
+                  </div>
+                  <div class="card2">
+                    <el-card class="card2">
+                       <el-row :span="4">
+                          <el-col :span="1">
+                            <img src="./static/assets/logo.png" style="height:40px"></img>
+                          </el-col>
+                          <el-col :span="2">
+                            <h4>郑川</h4>
+                          </el-col>
+                        </el-row>
+                        <el-row>
+                          <el-col :span="6">
+                            <p>我觉得还是运气成分居多</p>
+                          </el-col>
+                        </el-row>
+                        <el-row>
+                          <el-col :span="1">
+                            <el-button  type="text" icon="edit">
+                            </el-button>
+                          </el-col>
+                          <el-col :span ="2" >
+                          </el-col>
+                          <el-col :span="1">
+                            <el-button type="text" icon="share"></el-button>
+                          </el-col>
+                          <el-col :span="2">
+                          </el-col>
+                          <el-col :span="1">
+                            <el-button type="text" icon="star-off"></el-button>
+                          </el-col>
+                        </el-row>
+                    </el-card>
+                  </div>
+                  <div class="card3">
+                    <el-card class="card3">
+                      <el-row :span="4">
+                        <el-col :span="1">
+                          <img src="./static/assets/logo.png" style="height:40px"></img>
+                        </el-col>
+                        <el-col :span="2">
+                          <h4>陈冠斌</h4>
+                        </el-col>
+                      </el-row>
+                      <el-row>
+                        <el-col :span="6">
+                          <p>我一个不看球的就进来水一下</p>
+                        </el-col>
+                      </el-row>
+                      <el-row>
+                        <el-col :span="1">
+                          <el-button  type="text" icon="edit">
+                          </el-button>
+                        </el-col>
+                        <el-col :span ="2" >
+                        </el-col>
+                        <el-col :span="1">
+                          <el-button type="text" icon="share"></el-button>
+                        </el-col>
+                        <el-col :span="2">
+                        </el-col>
+                        <el-col :span="1">
+                          <el-button type="text" icon="star-off"></el-button>
+                        </el-col>
+                      </el-row>
+                    </el-card>
+                  </div>
+                </div>
+              </el-tab-pane>
+              <el-tab-pane label="相关推荐" name="second"></el-tab-pane>
+
+            </el-tabs>
+          </div>
+        </el-col>
+      </el-row>
+    </div>
+  </div>
+
+</body>
+
+<!-- 先引入 Vue -->
+<script src="./static/js/vue.js"></script>
+<!-- 引入组件库 -->
+<script src="./static/js/index.js"></script>
+
+<script>
+new Vue({
+  el: '#app',
+  //template: '<App/>',
+  //components: { App }
+})
+</script>
+
+
+
+
+<style>
+body {
+  font-family: Helvetica, sans-serif;
+}
+   .el-row {
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .el-col {
+    border-radius: 5px;
+  }
+  .bg-purple-dark {
+    background: #99a9bf;
+  }
+  .bg-purple {
+    background: #d3dce6;
+  }
+  .bg-purple-light {
+    background: #e5e9f2;
+  }
+  .grid-content {
+    border-radius: 4px;
+    min-height: 36px;
+  }
+  .row-bg {
+    padding: 10px 0;
+    background-color: #f9fafc;
+  }
+</style>
+
+</html>

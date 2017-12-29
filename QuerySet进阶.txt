@@ -1,0 +1,13 @@
+
+django官方文档 和
+https://code.ziqiangxuetang.com/django/django-queryset-advance.html
+
+实测：
+可以使用values(获得部分属性)
+不可以使用defer,only
+
+annotate 聚合 计数，求和，平均数等：
+Aggregation
+https://docs.djangoproject.com/en/dev/topics/db/aggregation/
+
+extra：属性名称修改

@@ -1,0 +1,25 @@
+https://www.cnblogs.com/xiongzuyan/p/7485700.html
+
+
+
+  <div id="article">
+    <Article :title='title' :author='author' :time='time' :text='text' :views='views' :liked='liked' ></Article>
+  </div>
+
+
+
+  import Article from '../components/Article'
+  import Comment from '../components/Comment'
+  import Comment_create from '../components/Comment_create'
+export default {
+  components: {
+    Article,
+    Comment,
+    Comment_create
+  },
+
+
+
+
+  props:['title', 'author', 'time', 'text', 'views', 'liked'],
+

@@ -1,0 +1,10 @@
+Vue.js中v-bind v-model的使用和区别
+v-model 指令在表单控件元素上创建双向数据绑定,所谓双向绑定，指的就是我们在js中的vue实例中的data与其渲染的dom元素上的内容保持一致，两者无论谁被改变，另一方也会相应的更新为相同的数据
+http://blog.csdn.net/itkingone/article/details/70210386 
+
+
+
+
+vue中v-model和v-bind绑定数据的异同
+http://www.tangshuang.net/3507.html
+

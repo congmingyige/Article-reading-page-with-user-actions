@@ -1,0 +1,8 @@
+
+this.$refs.
+
+props
+
+http://blog.csdn.net/sinat_38529191/article/details/72866426
+
+ 本地储存localStorage与cookie的区别

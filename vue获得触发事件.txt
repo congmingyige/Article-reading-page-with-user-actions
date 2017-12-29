@@ -1,0 +1,5 @@
+star_condition_change($event)
+
+    star_condition_change($event) {
+      console.log($event);
+

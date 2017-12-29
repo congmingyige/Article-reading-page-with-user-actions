@@ -1,0 +1,5 @@
+
+https://router.vuejs.org/zh-cn/essentials/getting-started.html
+
+good:
+http://www.jb51.net/article/110197.htm

@@ -1,0 +1,47 @@
+            return HttpResponse(json.dumps({'article': serializers.serialize("json", [article]),
+                                             'comments': serializers.serialize("json", article.comments.all()),
+                                             'mode': return_code['article_show_success']}))
+
+
+
+
+                      let article=JSON.parse(response.body.article)[0].fields;
+                      console.log(article);
+
+                      this.title=article.title;
+
+
+
+[{\"model\": \"article.comment\", \"pk\": 15, \"fields\": {\"content\": \"content14\", \"author\": 9, \"time\": \"2017-11-25T15:47:20.952Z\"}}, {\"model\": \"article.comment\", \"pk\": 16, \"fields\": {\"content\": \"content15\", \"author\": 9, \"time\": \"2017-11-25T15:47:21.103Z\"}}]
+
+
+
+
+
+
+    if request.method == 'POST':
+        article = Article.objects.filter(id=1)
+        if article:
+            article = model_to_dict(article[0])
+            comments = article['comments']
+            article.pop('comments')
+            author = User.objects.get(id=article['author'])
+            if author.phone is None:
+                author = author.email
+            else:
+                author = author.phone
+            article['author'] = author
+
+            for i in range(len(comments)):
+                comments[i] = model_to_dict(comments[i])
+                author = User.objects.get(id=comments[i]['author'])
+                if author.phone is None:
+                    author = author.email
+                else:
+                    author = author.phone
+                comments[i]['author'] = author
+            print(article['time'])
+            print(comments[i]['time'])
+            return HttpResponse(json.dumps({'article': article, 'comments': comments}))
+
+

@@ -1,0 +1,46 @@
+2017.10.14
+1.前端和后端的信息交流，学会前端接受信息并传送到后端，然后后端处理信息交由前段显示。
+2.背景特效的处理.（这个可搁置）
+3.rest_of_api模式
+4.手机注册和邮箱注册的前端合并。
+5.核心问题：文章主体和文章评论区。（后端表的设计+前端页面布局）
+6.紧急问题：打通前后端（把django和vue.js组合起来。完成快的话可以加快点进度）。
+Ps：template模板尽量用vue.js和element.ui处理，先确定布局。
+7.vue+django整合:首先不需要自己构建数据库程序，django内部已经全部封装好了，我们只需要将全部的数据库内容添加到路由中，然后输入
+python manage.py makemigrations myapp
+python manage.py migrate
+交由数据库去实现相应的表。
+前端:
+创建完前端内容需要将前端内容全部映射到后端：
+
+现在前后端已经全部创建完毕，但是问题是他们是分离的，运行在不同的服务器上，所以需要将二者绑定，采用的方法是在django上修改templateview：
+urlpatterns = [
+    url(r'^admin/', admin.site.urls),
+    url(r'^api/', include(myapp.urls)),
+    url(r'^$', TemplateView.as_view(template_name="index.html")),
+]
+接下来需要修改文件的模板
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': ['appfront/dist'],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+最后配置文件的搜索路径:
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "appfront/dist/static"),
+]
+最后运行程序。
+
+
+8.前端代码疑问：对于组件还是有以下疑问:在修改完图标风格后，发现这里还是有很多问题，比如图标和字符串还是不能很好的排版，最好的方法还是修改图标的像素大小，使之尽量和字符串匹配。这个需要好好修改下。
+9.这一周基本页面基本确定，但是与较为成熟的页面相比还是有很多不足，最严重的是布局问题，一个好的网页效果与布局是密不可分的。

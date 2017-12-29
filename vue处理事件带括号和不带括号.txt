@@ -1,0 +1,12 @@
+带括号的话 生成的代码是 
+
+ on: {
+       "click": function($event) {
+             doXX()
+          }
+    }
+
+不带括号是
+
+on: { "click": doXX }
+

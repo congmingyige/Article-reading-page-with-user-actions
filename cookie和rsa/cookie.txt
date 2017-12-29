@@ -1,0 +1,16 @@
+http://blog.51cto.com/callmepeanut/1390769
+
+     项目中需要实现下载生成的Excel文件功能，需要如下设置
+     //清空输出流
+     response.reset();   
+     //定义输出类型
+     response.setContentType("application/vnd.ms-excel;charset=UTF-8");
+     //设置响应头和下载保存的文件名      用关键字命名        
+     response.setHeader("content-disposition","attachment;filename="+new String(excelName.getBytes("gb2312"), "ISO8859-1"));
+     在设置response.setHeader时，如果含有中文字符，一定要转换成ISO8859-1格式，否则设置的中文会出现错误。
+     response.setHeader("content-disposition","attachment;filename="+new String(excelName.getBytes("gb2312"), "ISO8859-1"));
+
+
+
+ response.setHeader("Content-Disposition", "attachment;filename=aaa.doc");
+
