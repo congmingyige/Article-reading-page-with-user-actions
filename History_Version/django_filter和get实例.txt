@@ -1,0 +1,108 @@
+
+model : .xxx
+dict  : ['xxx']
+
+
+model转dict
+
+I.
+           article1 = article.__dict__
+           print(article1)
+           # print(article1['time'])
+           article2 = model_to_dict(article[0])
+           print(article2)
+           # print(article2['time'])
+
+{'model': <class 'article.models.Article'>, '_db': None, '_hints': {}, 'query': <django.db.models.sql.query.Query object at 0x040F93F0>, '_result_cache': [<Article 'China'@<User '13088756143'>>], '_sticky_filter': False, '_for_write': False, '_prefetch_related_lookups': (), '_prefetch_done': False, '_known_related_objects': {}, '_iterable_class': <class 'django.db.models.query.ModelIterable'>, '_fields': None}
+
+{'id': 1, 'title': 'China', 'author': 1, 'text': 'China is a beautiful country.', 'views': 0, 'liked': 0, 'comments': [<Article <User '15682871716'>@15>, <Article <User '15682871716'>@16>]}
+
+用model_to_dict干净一点(from django.forms.models import model_to_dict)
+
+
+
+时间没有保存
+
+通过type查看类型
+I.
+    print(Article)
+<class 'article.models.Article'>
+
+    print(Article.objects)
+article.Article.objects
+
+II.
+    a1 = Article.objects.get(id=1)
+    print(a1)
+    print(type(a1))
+<Article 'China'@<User '13088756143'>>
+<class 'article.models.Article'>
+
+III.
+    a2 = Article.objects.filter(id=1)
+    print(a2)
+    print(type(a2))
+<QuerySet [<Article 'China'@<User '13088756143'>>]>	//QuerySet
+<class 'django.db.models.query.QuerySet'>		//Model
+
+    a3 = a2[0]
+    print(a3)
+    print(type(a3))
+<Article 'China'@<User '13088756143'>>
+<class 'article.models.Article'>
+
+User.objects.filter(id=1)[0].phone
+
+IV.
+    c1 = a1.comments.all()
+    print(c1)
+    print(type(c1))
+<QuerySet [<Article <User '15682871716'>@15>, <Article <User '15682871716'>@16>]>
+<class 'django.db.models.query.QuerySet'>
+
+    c2 = a2.comments.all()
+Wrong!!!
+
+V.
+a1 = Article.objects.get(id=10)
+Wrong!
+
+    a1 = Article.objects.filter(id=10)
+    print(a1)
+<QuerySet []>
+
+VI.
+article = Article.objects.filter(id=10)[0]
+IndexError: list index out of range
+
+    article = Article.objects.filter(id=10)
+    article = article[0]
+    print(article)
+IndexError: list index out of range
+
+VII.
+        article = Article.objects.filter(id__gt=0)	#>0
+        print(article)
+
+<QuerySet [<Article 'China'@<User '13088756143'>>, <Article 'LZU'@<User '156828710000'>>, <Article 'title'@<User '156828700000'>>, <Article '1'@<User '156828700000'>>]>
+
+VIII.
+
+
+综上，用filter,		[0]
+
+VIII.
+article = article.values_list('title', 'author__phone', 'author__email', 'time', 'text')
+ValuesQuerySet对象
+不能用{'article': serializers.serialize("json", article)}直接转成json对象
+
+
+
+
+
+
+.delete
+.update
+.create
+
+

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- 引入样式 -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
+</head>
+<body>
+    <div id="app">
+    <el-container>
+        <el-header style="padding:0;">
+            <el-row>
+                <el-menu :default-active="activeIndex2" class="el-menu-demo"  mode="horizontal" @select="handleSelect">
+                <el-row>
+                    <el-col :span="8"  type="flex" justify="space-around">
+                      <el-menu-item index="1" class="font-size-large">
+                        <a src="www.baidu.com"><img src="./logo.png" style="height:60px;" class="nav-logo"></a>
+                      </el-menu-item>
+                      <el-menu-item index="1" class="font-size-large">发现</el-menu-item>
+                      <el-menu-item index="1" class="font-size-large">关注</el-menu-item>
+                      <el-menu-item index="1" class="font-size-large">消息</el-menu-item>
+                    </el-col>
+                    <el-col :span="14">
+                      <el-menu-item index="1">
+                          <el-input>
+                                placeholder="请输入想查找的内容"
+                                icon="search"
+                                v-model="input2"
+                                :on-icon-click="handleIconClick">
+                          </el-input>
+                          <el-button type="primary">搜索</el-button>
+                      </el-menu-item>
+                    </el-col>
+                    <el-col :span="2">
+                      <div style="display:flex; display:-webkit-flex; align-items:center;">
+                          <el-submenu index="2">
+                              <template slot="title"><img src="./logo.png" style="height:40px;"></template>
+                              <el-menu-item index="2-1">我的主页</el-menu-item>
+                              <el-menu-item index="2-2">设置</el-menu-item>
+                              <el-menu-item index="2-3">退出</el-menu-item>
+                          </el-submenu>
+                      </div>
+                    </el-col>
+                </el-row>
+                </el-menu>
+            </el-row>
+        </el-header>
+
+
+        <el-main>
+          <div>
+            <el-row>
+                <el-col :span="6" :offset="6">
+                  <div class="headline-center-outer">
+                    <h1 class="font-size-exlarge font-color-heavy headline-center-inner">她</h1>
+                  </div>
+                </el-col>
+                <el-col :span="4" :offset="20">
+                    这里放广告
+                </el-col>
+            </el-row>
+            <el-row>
+                <el-col :span="12" :offset="6">
+                  <div class="author">
+                    <img src="./logo.png" class="nav-usr" style="height:40px;">
+                    <div style="position:relative; left:40px;">
+                      <a class="font-size-small font-color-medium">淳子</a>
+                      <div>
+                        <span class="font-size-exsmall font-color-exlight">2017.11.28 22:52* 字数 1972 阅读 19467评论 157喜欢 1320赞赏 3</span>
+                      </div>
+                    </div>
+                  </div>
+                </el-col>
+            </el-row>
+            <el-row>
+                <el-col :span="12" :offset="6">
+                  <p class="font-size-large font-color-light">
+                    大淳子是个很蠢很安静的姑娘。 </p>
+                  <p class="font-size-medium font-color-medium">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;至少活了这20多年来，我是头一次遇到。
+                    昨天微博上被“红黄蓝幼儿园”事件刷屏，犹记得那时我正和哥们一起坐在食堂的饭桌上调天侃地，滔滔不绝。一回头便瞥见一抹小小的身影，那眼睛是刚哭过了吗？那么红？
+                    低头刷了刷她的朋友圈，果不其然，这个傻子，痛骂始作俑者的同时，为这些孩子难过得哭了。
+                    我本想在下边给她留言，大傻子。后来想想，以这货的智商，估计一生气会把我拉黑，再不想跟我联系，为了让大淳子笑起来，我特意去微博上找了一条非常好笑的段子和配图，然后编辑好发了一条朋友圈，那条朋友圈，我是这么写的：
+                    呐~不要哭，还有我在偷偷爱着你。
+                    我暗恋大淳子不是一天两天了，可是她好像一直不知道，我猜她可能是一直没想到。
+                    我依然记得第一次见到大淳子的场景，九月份第二次的现代汉语课。</p>
+                  <div class="img-center">
+                    <img src="./logo.png" class="img-height">
+                  </div>
+                  <p class="font-size-medium font-color-medium">
+                    我平时最烦的就是现代汉语课，最不凑巧的是，它是我们班的班导师亲自带的课。
+                    那天的课是在下午，因为上午没课我就一直躺在宿舍没起来，同宿舍的哥们，不知抽了哪根筋，中午非把我拖起来吃饭，还嚷嚷着要迟到了，结果这家伙现在又说肚子疼，非要让我先来帮他们抢位置。我夹着书本，照例晃悠悠进教室，没想到教室里一个人都没有。
+                    当时我的第一反应是，本帅哥头一次这么积极，大家也不用这么配合吧？进gf错教室了？我退回去重新瞪大我内双的小单眼仔细看了看教室门号，306啊，没错啊。
+                    时间呢？我慌忙掏出手机。“这群孙子！”我不禁爆粗口，才十二点就把我坑到教室，太不仗义了吧！要知道下午上课时间可是一点半呢！我非得回去收拾他们不可。
+                    我低着头边在我们群里呼喊这帮不靠谱的兄弟，边大步流星朝门外走去，冷不丁，撞上一个柔软的身子骨，鼻尖掠过一阵淡淡的香。
+                    “啪”夹在手臂的书本瞬间滑落，我还未来得及去俯身拾起，耳畔边便已响起一句好听的“对不起啊”，然后书本已经递到我手里了，我抬头看了一眼，是个女孩子啊。可是却没什么印象。
+                    “也是来上现代汉语课的吗？”我问。
+                  </p>
+                  <p>
+                    只见她边往窗户边第三排的位置走去，边回答，“是啊，你是这个班的吗？”
+                    我不禁偷偷翻了个白眼，第一次怀疑自己的个人魅力，要知道班里一共就我们9根班草，要说，我对她没什么印象倒是可以解释，毕竟女生太多，她的姿色嘛，也算一般。所以也看不过来，不过男生就那几个，她竟然还问我是不是这个班的，真是……..
+                    见我一直没回答，她趴在窗户边忽然回过头，冲我笑了一下。圆圆的脸，架着金属圆边的眼镜，斯斯文文，长发自然的散落，窗户边阳光很好，铺散在她整个人身上。那时候我脑子里忽然冒出一句话：
+                    梦里你喜欢的女人一定要有肤白貌美大长腿，而现在，喜欢一个女人，也不能说是女人，准确来说，应该是女孩，仅仅只是因为她站在窗户边的阳光下冲你笑得样子很好看。
+                    我朝她看了看，故作镇定的把本来想踏出的脚收回，默默地夹着书走到最后一排坐下。然后就开始趴在桌子上偷偷看着她，那群不靠谱的兄弟见我一直没回复早已笑炸了锅。
+                    我清了清嗓子，端坐起来，一字一句打着：由于本大神今天遇到了小仙女一枚，所以今天这事，不追究。说完不忘加了一个坏坏的表情。
+                    然后我用手机当做镜子，看了看今日的脸有没有往日的大神美颜，还特意拨拉了一下刚梳好不久的头发，在将一切确认无误之后，趁着距离上课还有半个多小时的时间，我便有一搭没一搭凑着跟她讲话。
+                    那时候忽然觉得一个班就是好啊，“是同班同学啊”真是个让人无法拒绝的理由。
+                    所以那个中午，我知道了她叫李淳，还有了她的微信，看着她的微信头像，心里忽然涌进很大的窃喜。“大淳子”我在心里甜甜的想，默默地把她的备注也改成了“大淳子”。
+                    可抬眼望去，她好像很淡定的样子，我皱着眉头想，可能女生都比较矜持。不管怎么样，那是一个我现在回忆起来都算是一个比较美好的中午时光。
+                    遇见有时候是件蛮神奇的事情，以前对大淳子没印象的时候，走哪也没注意到遇见过，自从有了印象之后，除了心里多了心心念念，平日没课的时候，我发现我总能很轻易地跟她在校园擦身而过，不过这个傻姑娘总是能自动忽略距她几米开外的大帅哥冲她挤眉弄眼的笑。
+                    我知道大淳子没课的时候，会在中午十二点零五准时出现在食堂，她似乎很喜欢靠窗户的位置，每次总是一个人默默坐在最后一排窗户边吃饭，她午饭总是吃米饭配上一荤一素的菜色。
+                    有一次我偷偷排在她后面，巧的是，她刚点完菜临到刷卡时，却发现口袋里没带卡，这个时候我心里真是乐开了花，一把冲过去，装作插队打饭的样子，把卡举的高高的，歪着头，装作很意外的模样跟她打招呼：“好巧啊，李淳，你也来吃饭啊。”
+                  </p>
+                  <div class="img-center">
+                    <img src="./logo.png" class="img-height">
+                  </div>
+                  <p class="font-size-medium font-color-medium">
+                    只见她露出忽然有些为难的神色，耳朵红红的嚅嗫道：“那个，你的卡，能不能先借我一下，我待会会把钱转给你。”
+                    我二话不说，直接递给她，嘴上说着，“没事，没事，都是一个班的干嘛这么客气，不用啦！尽管用好了！”心里想，“傻子，我等你这句话等好久了。”
+                    然后她端着餐盘，认真的冲我笑了笑，轻轻的说了句，“谢谢。”我低着头看着她小心的模样，连同我的心也开始不安起来，跳的局促而慌张，携带着更多的是偷偷的欣喜，甚至第一次有了一种非常想把她拥进怀里的冲动。
+                    不过从那次之后，大淳子好像格外小心，我便很少能有这种“英雄救美”的机会了更多的时候是静静的坐在她旁边的桌子上吃饭。
+                    大淳子晚上八点会准时出现在操场跑步，晚上我在操场和哥们一起打篮球的时候，总能看见大淳子小小的身影，穿着黑色的运动服，一个人在那静静的跑步。
+                    每次看到大淳子出现的时候，我便直接丢开球，任凭他们在后面吹着口哨，痛批我重色轻友。
+                    老子就是乐意，我回头冲他们回了哨子。“祝哥们我幸福！”便屁颠屁颠跟着大淳子身后慢慢的跑。
+                    借着操场昏黄的路灯，有时候大淳子也会看到我，但是也就对我淡淡的一笑，似乎对于我每天的出现她一点没觉得有什么诧异和不对。
+                    大淳子偶尔会在朋友圈分享自己的生活。有关开心的、难过的，看过的书，看过的电影。
+                  </p>
+                </el-col>
+            </el-row>
+          </div>
+
+          <div>
+            <el-row>
+              <el-col :span="12" :offset="6" style="padding:0 0 0 3px;margin-bottom:10px;border-bottom-color:rgb(240,240,240); border-bottom-style:solid; border-bottom-width:0.9px; ">
+                <div class="author">
+                  <img src="./logo.png" class="nav-usr" style="height:40px;">
+                  <div style="text-align:center; margin-top:10px;">
+                    <el-input
+                      type="text"
+                      :rows="2"
+                      placeholder="请在此添加你的评论"
+                      v-model="textarea"
+                      style="position:relative; left:50px;">
+                    </el-input>
+                    <el-button round style="display:inline; margin: 10px 0 10px;">取消</el-button>
+                    <el-button type="primary" round style="display:inline; margin:10px 0 10px;">提交</el-button>
+                  </div>
+                </div>
+              </el-col>
+            </el-row>
+            <el-row>
+              <el-col :span="12" :offset="6">
+                <div class="author">
+                  <img src="./logo.png" class="nav-usr" style="height:40px;">
+                  <div style="position:relative; left:40px;">
+                    <a style="font-size:14px;line-height=1.5">用户姓名</a>
+                    <div>
+                      <span class="font-size-exsmall font-color-light">发布时间</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="font-size-small font-color-medium">
+                  <p>写的很好继续努力！</p>
+                </div>
+                <div class="rating">
+                  <span class="font-size-small font-color-light">你有多喜欢这个篇文章呢？</span>
+                  <el-rate
+                    v-model="value2"
+                    :colors="['#99A9BF', '#F7BA2A', '#FF9900']">
+                  </el-rate>
+                </div>
+              </el-col>
+            </el-row>
+          </div>
+
+        </el-main>
+        <el-footer>
+          <div class="footer">
+            footer
+          </div>
+        </el-footer>
+
+
+    </el-container>
+
+
+
+
+
+
+
+
+
+  </div>
+</body>
+<style>
+.font-size-exlarge{
+  font-size:40px;
+}
+.font-size-large{
+  font-size: 20px;
+}
+
+.font-size-medium{
+  font-size: 15px;
+}
+
+.font-size-small{
+  font-size:12px;
+}
+
+.font-size-exsmall{
+  font-size:10px;
+}
+
+.font-color-exheavy{
+  color:##000000//be careful when using it cuse it atrract too much attention
+}
+
+.font-color-heavy{
+  color:#1a1a1a;
+}
+
+.font-color-medium{
+  color:#404040;
+}
+
+.font-color-light{
+  color:##595959;
+}
+
+.font-color-exlight{
+  color:#999999;//for the least important info
+}
+
+.blcok-bottom-line{
+  border-bottom-color:rgb(240,240,240);
+  border-bottom-style:solid;
+  border-bottom-width:0.9px;
+}
+
+.img-height{
+  display: inline;
+  height:100%;
+}
+
+.img-center{
+  text-align:center;
+}
+
+.footer{
+  height:200px;
+  background-color:#4d79ff;
+  color: #ffffff;
+}
+
+.text-certer-outer{
+  height:40px;
+  width: 100%;
+  margin: 20px auto 10px;
+}
+
+.text-center-inner{
+  margin:0 auto;
+
+}
+
+</style>
+
+<!-- 先引入 Vue -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
+<!-- for textarea-->
+<script>
+export default {
+  data() {
+    return {
+      textarea: ''
+    }
+  }
+}
+</script>
+<!-- for rating-->
+<script>
+  export default {
+    data() {
+      return {
+        value1: null,
+        value2: null
+      }
+    }
+  }
+</script>
+
+
+
+<!--for <div id="app"> -->
+<script>
+  export default {
+    data() {
+      return {
+        value1: null,
+        value2: null
+      }
+    }
+  }
+</script>
+<script>
+    new Vue({
+      el: '#app',
+      data: function() {
+        return { visible: false }
+      }
+    })
+</script>
+
+<!--for <el-tab> -->
+<script>
+  export default {
+    data() {
+      return {
+        activeName: 'first'
+      };
+    },
+    methods: {
+      handleClick(tab, event) {
+        console.log(tab, event);
+      }
+    }
+  };
+</script>
+
+<!--for <time> -->
+<script>
+export default {
+  data() {
+    return {
+      currentDate: new Date()
+    };
+  }
+}
+</script>
+
+<!--for <el-input> 搜索框 -->
+<script>
+export default {
+  data() {
+    return {
+      input2: ''
+    }
+  },
+  methods: {
+    handleIconClick(ev) {
+      console.log(ev);
+    }
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <style>
+  .text {
+    font-size: 14px;
+  }
+
+  .item {
+    padding: 18px 0;
+  }
+
+  .clearfix:before,
+  .clearfix:after {
+      display: table;
+      content: "";
+  }
+  .clearfix:after {
+      clear: both
+  }
+
+  .box-card {
+    width: 100%;
+  }
+
+  .item {
+    margin-top: 10px;
+    margin-right: 40px;
+  }
+
+
+
+
+
+
+
+
+  .user-pic{
+    display: inline;
+    height:40px;
+    width:40px;
+  }
+  .time {
+    font-size: 13px;
+    color: #999;
+  }
+  .cross-line{
+    color: #999;
+  }
+  .nav-usr{
+    position: absolute;
+    margin: auto,0;
+    height: 100%;
+    overflow: auto;
+  }
+</style>
+
+
+</body>

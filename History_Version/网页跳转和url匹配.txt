@@ -1,0 +1,10 @@
+
+https://router.vuejs.org/zh-cn/essentials/getting-started.html
+
+http://www.jb51.net/article/110197.htm
+
+
+etc.
+一个动态链接：
+    <router-link to="/p/3">Go to Foo</router-link>
+

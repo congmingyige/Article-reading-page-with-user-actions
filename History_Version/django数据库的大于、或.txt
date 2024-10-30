@@ -1,0 +1,9 @@
+
+
+数据库的大于/小于等
+http://blog.csdn.net/vic_torsun/article/details/69791170
+https://www.douban.com/note/301166150/
+
+Poll.objects.get(
+Q(pub_date=date(2005, 5, 2)) | Q(pub_date=date(2005, 5, 6)),
+question__startswith=’Who’)

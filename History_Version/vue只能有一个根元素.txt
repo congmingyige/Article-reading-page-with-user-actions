@@ -1,0 +1,2 @@
+Component template should contain exactly one root element
+只能有一个根元素 <div>abcde....<grandson01 ></grandson01></div>，不能 <div>abcde....</div><grandson01></grandson01>

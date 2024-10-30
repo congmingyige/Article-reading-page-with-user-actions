@@ -1,0 +1,58 @@
+
+1.可设置内部函数
+2.有些小的模块可以不单独开设函数
+3.函数名：单词先小写，之后的大写
+
+from user import views
+from user.views import login,register,password_forget
+from user import CheckAccountLegal as dg
+
+return render(request, "<p>OK</p>")
+
+
+多个选择语句，用switch，清晰明了
+
+
+函数名：都是小写
+
+
+urlpatterns = [
+    url(r'^$', calc_views.index, name='home'),
+    url(r'^add/$', calc_views.add, name='add'),
+    url(r'^add/(\d+)/(\d+)/$', calc_views.add2, name='add2'),
+    url(r'^admin/', admin.site.urls),
+]
+
+
+urlpatterns = [
+    url(r'^articles/2003/$', views.special_case_2003),
+    url(r'^articles/([0-9]{4})/$', views.year_archive),
+    url(r'^articles/([0-9]{4})/([0-9]{2})/$', views.month_archive),
+    url(r'^articles/([0-9]{4})/([0-9]{2})/([0-9]+)/$', views.article_detail),
+]
+
+
+
+from django.views.generic.simple import redirect_to  
+urlpatterns = patterns('',  
+    (r'^one/$', redirect_to, {'url': '/another/'}),  
+)  
+
+from django.http import HttpResponseRedirect  
+  
+def myview(request):  
+    ...  
+    return HttpResponseRedirect("/path/")  
+
+
+return HttpResponseRedirect("/main_page")
+
+
+
+
+
+
+
+
+
+

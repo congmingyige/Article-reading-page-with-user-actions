@@ -1,0 +1,22 @@
+使用路径名称
+
+在定义路径规则的时候，如果你给它提供了一个name属性，则可以在后续使用这条路径规则的时候，直接引用。
+
+router.map({
+  '/user/:userId': {
+       name: 'user',
+    component: {...}
+  }
+});
+在v-link中使用
+
+<a v-link="{name: 'user', params: {userId: 1}">This is a user whose id is 1</a>
+还可以使用router.go()
+
+router.go({name: 'user', params: {userId: 1}});
+最终都会匹配到/user/1这条路径上
+
+作者：SCQ000
+链接：http://www.jianshu.com/p/cb918fe14dc6
+來源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。

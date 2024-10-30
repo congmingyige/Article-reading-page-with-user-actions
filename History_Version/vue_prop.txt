@@ -1,0 +1,16 @@
+
+<ArticleSingle :author="author" :time="time" :text="text" :views="views" :liked="liked" :text_length="text_length" :comment_count="comment_count"></ArticleSingle>
+
+×Ó×é¼þ£º
+props: ['author', 'time', 'text', 'views', 'liked', 'text_length', 'comment_count'],
+
+                     //this.title = article[0];
+                      if (article[2] == null)
+                        this.author = article[1];
+                      else
+                        this.author = article[2];
+                      this.time = article[3];
+                      this.text = article[4];
+                      this.views = article[5];
+                      this.liked = article[6];
+                      this.text_length = this.text.length;

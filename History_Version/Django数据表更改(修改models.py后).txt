@@ -1,0 +1,28 @@
+python manage.py makemigrations
+python manage.py migrate
+
+
+若不行：
+http://blog.csdn.net/chenjinyu_tang/article/details/52157898
+
+
+若：
+python: can't open file 'manage.py': [Errno 2] No such file or directory
+
+通过import django(鼠标看) 找到django的安装路径
+django命令行 执行：python setup.py install
+D:\Computer_Software\python3.6.3\django\Django-1.11.6	该路径下有'setup.py'
+
+
+
+1. 删掉migrations和 __pycache__ folder
+2. 重新执行python manage.py makemigrations app_name(etc. article). 这样让django detect到
+3. python manage.py migrate.
+
+
+
+python manage.py migrate myapp --fake
+
+
+新建app
+python manage.py startapp app_name

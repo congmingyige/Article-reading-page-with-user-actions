@@ -1,0 +1,5 @@
+python manage.py dbshell
+django中按Ctrl+C退出
+
+cmd中quit退出
+

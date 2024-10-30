@@ -1,0 +1,6 @@
+
+<div class="pop" v-show="isShow">
+
+this.isShow=false;
+this.isShow=True;
+

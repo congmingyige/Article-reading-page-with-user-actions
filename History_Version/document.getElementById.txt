@@ -1,0 +1,21 @@
+                      let i;
+                      for (i=0;i<comments.length;i++) {
+                        if (comments[i][1] == null)
+                          document.getElementById('comments').innerHTML += 'author:'+ comments[i][0] + '\n' + '<p>' + comments[i][2] + '</p>'+ comments[i][3] +   + '<button type="button">修改</button>' + '<button type="button">删除</button>' + '<br/>'+ '<br/>';
+                        else
+                          document.getElementById('comments').innerHTML += '<textarea class="comment">'+ comments[i][1] + '\n' + comments[i][2] + '\n' + comments[i][3] + '</textarea>' + '<br/>'  + '<button type="button">修改</button>' + '<button type="button">删除</button>' + '<br/>'+ '<br/>';
+                      }
+
+
+
+<input type="text" name="result" id="result" disabled="disabled"/>文本框加个id属性，值可以跟name一样。
+js里调用这个文本框，设置value值等于100
+document.getElementById("result").value="100";
+
+
+
+document.getElementById("").classlist
+document.getElementById("").style
+
+
+
